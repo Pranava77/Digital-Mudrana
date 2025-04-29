@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="container-section py-0">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img alt="Digital Mudrana Logo" src="/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png" className="h-12 object-cover" />
+            <img alt="Digital Mudrana Logo" src="/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png" className="h-20 object-cover" />
             <span className="text-print-gold font-bold text-2xl">Digital <span className="text-print-orange">Mudrana</span></span>
           </div>
           
