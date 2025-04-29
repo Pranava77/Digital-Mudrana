@@ -1,6 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import SparkButton from './SparkButton';
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -12,7 +15,7 @@ const Navbar = () => {
       }
 
       // Determine active section for nav highlighting
-      const sections = ['hero', 'services', 'portfolio', 'testimonials', 'contact'];
+      const sections = ['hero', 'services', 'portfolio', 'testimonials', 'faq', 'contact'];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -47,18 +50,18 @@ const Navbar = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-1">
-            {['hero', 'services', 'portfolio', 'testimonials', 'contact'].map(section => <button key={section} onClick={() => scrollToSection(section)} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-colors", activeSection === section ? "text-print-gold" : "text-print-text hover:text-print-orange")}>
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+            {['hero', 'services', 'portfolio', 'testimonials', 'faq', 'contact'].map(section => <button key={section} onClick={() => scrollToSection(section)} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-colors", activeSection === section ? "text-print-gold" : "text-print-text hover:text-print-orange")}>
+                {section === "hero" ? "Home" : section.charAt(0).toUpperCase() + section.slice(1)}
               </button>)}
-            <Button className="ml-4 bg-print-gold hover:bg-print-gold/90 text-print-purple" onClick={() => scrollToSection('contact')}>
+            <SparkButton className="ml-4 bg-print-gold hover:bg-print-gold/90 text-print-purple" onClick={() => scrollToSection('contact')}>
               Get a Quote
-            </Button>
+            </SparkButton>
           </nav>
           
           <div className="md:hidden">
-            <Button variant="ghost" size="sm" className="text-print-gold" onClick={() => scrollToSection('contact')}>
+            <SparkButton variant="ghost" size="sm" className="text-print-gold" onClick={() => scrollToSection('contact')}>
               Contact Us
-            </Button>
+            </SparkButton>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import { ArrowRight } from 'lucide-react';
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
               <span className="text-print-gold font-bold text-2xl">Digital <span className="text-print-orange">Mudrana</span></span>
             </div>
             <p className="text-print-text/70 mb-6 max-w-md">
-              Professional printing services for all your business and personal needs. Quality results delivered on time, every time.
+              Premium printing services for all your business and personal needs in Bangalore and across Karnataka. Quality results delivered with precision and care.
             </p>
             <button onClick={() => document.getElementById('contact')?.scrollIntoView({
             behavior: 'smooth'
@@ -34,6 +35,13 @@ const Footer = () => {
                     {section.charAt(0).toUpperCase() + section.slice(1)}
                   </button>
                 </li>)}
+              <li>
+                <button onClick={() => document.getElementById('faq')?.scrollIntoView({
+                  behavior: 'smooth'
+                })} className="text-print-text/70 hover:text-print-orange transition-colors">
+                  FAQs
+                </button>
+              </li>
             </ul>
           </div>
           
@@ -53,7 +61,7 @@ const Footer = () => {
         
         <div className="border-t border-print-purple/20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-print-text/60 text-sm">
-            &copy; {new Date().getFullYear()} Digital Mudrana. All rights reserved.
+            &copy; {new Date().getFullYear()} Digital Mudrana. All rights reserved. | Bangalore, Karnataka
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <button onClick={scrollToTop} className="text-print-text/60 hover:text-print-gold transition-colors text-sm">

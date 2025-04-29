@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import SparkButton from './SparkButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,17 +107,22 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-print-purple text-print-text">
-      <div className="container-section">
+    <section id="contact" ref={sectionRef} className="relative py-24 bg-gradient-to-b from-print-darkPurple to-print-purple text-print-text overflow-hidden">
+      {/* Decorative elements for luxury feel */}
+      <div className="absolute top-0 left-0 w-full h-2 bg-print-gold"></div>
+      <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-print-gold/5 blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-print-orange/5 blur-3xl"></div>
+
+      <div className="container-section relative z-10">
         <div ref={headingRef} className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-print-gold">Get in Touch</h2>
-          <p className="text-lg text-print-text/80 max-w-2xl mx-auto">
-            Ready to bring your print project to life? Reach out for a quote or to discuss your specific needs.
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-print-gold">Elevate Your Brand</h2>
+          <p className="text-xl text-print-text/90 max-w-2xl mx-auto">
+            Experience premium print solutions tailored to your unique vision.
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 bg-print-lightBackground/20 backdrop-blur-sm p-8 rounded-lg shadow-xl border border-print-gold/20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-print-text/90">Your Name</label>
@@ -127,7 +133,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="bg-print-lightBackground/50 border-print-purple/20 text-print-text placeholder:text-print-text/50"
+                  className="bg-print-lightBackground/30 border-print-gold/30 text-print-text placeholder:text-print-text/50 focus:border-print-gold focus:ring-print-gold/30"
                 />
               </div>
               <div className="space-y-2">
@@ -140,7 +146,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="john@example.com"
                   required
-                  className="bg-print-lightBackground/50 border-print-purple/20 text-print-text placeholder:text-print-text/50"
+                  className="bg-print-lightBackground/30 border-print-gold/30 text-print-text placeholder:text-print-text/50 focus:border-print-gold focus:ring-print-gold/30"
                 />
               </div>
             </div>
@@ -151,8 +157,8 @@ const ContactSection = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="(123) 456-7890"
-                className="bg-print-lightBackground/50 border-print-purple/20 text-print-text placeholder:text-print-text/50"
+                placeholder="(+91) 98765-43210"
+                className="bg-print-lightBackground/30 border-print-gold/30 text-print-text placeholder:text-print-text/50 focus:border-print-gold focus:ring-print-gold/30"
               />
             </div>
             <div className="space-y-2">
@@ -164,64 +170,69 @@ const ContactSection = () => {
                 onChange={handleChange}
                 placeholder="Tell us about your project..."
                 required
-                className="min-h-32 bg-print-lightBackground/50 border-print-purple/20 text-print-text placeholder:text-print-text/50"
+                className="min-h-32 bg-print-lightBackground/30 border-print-gold/30 text-print-text placeholder:text-print-text/50 focus:border-print-gold focus:ring-print-gold/30"
               />
             </div>
-            <Button 
-              type="submit" 
-              className="w-full bg-print-gold hover:bg-print-gold/90 text-print-purple"
+            <SparkButton 
+              className="w-full bg-print-gold hover:bg-print-gold/90 text-print-purple font-medium text-lg py-6"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Request a Quote"}
-            </Button>
+              {isSubmitting ? "Sending..." : "Request a Premium Quote"}
+            </SparkButton>
           </form>
           
           <div ref={infoRef} className="flex flex-col justify-between">
-            <div className="mb-8">
-              <h3 className="text-2xl font-semibold mb-4 text-print-gold">Contact Information</h3>
-              <p className="mb-6 text-print-text/80">
-                Have questions or need immediate assistance? Reach out to us using any of the methods below.
+            <div className="mb-8 bg-print-darkPurple/60 p-8 rounded-lg backdrop-blur-sm border border-print-gold/10 shadow-xl">
+              <h3 className="text-3xl font-semibold mb-4 text-print-gold">Exclusive Service</h3>
+              <p className="mb-8 text-print-text/90 text-lg">
+                Our experts are ready to assist with your premium printing requirements. Reach out for personalized service and consultation.
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="flex items-start">
-                  <Phone className="h-5 w-5 mr-3 mt-1 text-print-orange" />
+                  <div className="w-10 h-10 rounded-full bg-print-gold/20 flex items-center justify-center mr-4">
+                    <Phone className="h-5 w-5 text-print-gold" />
+                  </div>
                   <div>
-                    <h4 className="font-medium text-print-text">Phone</h4>
-                    <p className="text-print-text/80">(555) 123-4567</p>
+                    <h4 className="font-medium text-print-gold text-lg">Phone</h4>
+                    <p className="text-print-text/90">+91 80-4123-5678</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Mail className="h-5 w-5 mr-3 mt-1 text-print-orange" />
+                  <div className="w-10 h-10 rounded-full bg-print-gold/20 flex items-center justify-center mr-4">
+                    <Mail className="h-5 w-5 text-print-gold" />
+                  </div>
                   <div>
-                    <h4 className="font-medium text-print-text">Email</h4>
-                    <p className="text-print-text/80">info@digitalmudrana.com</p>
+                    <h4 className="font-medium text-print-gold text-lg">Email</h4>
+                    <p className="text-print-text/90">info@digitalmudrana.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <MapPin className="h-5 w-5 mr-3 mt-1 text-print-orange" />
+                  <div className="w-10 h-10 rounded-full bg-print-gold/20 flex items-center justify-center mr-4">
+                    <MapPin className="h-5 w-5 text-print-gold" />
+                  </div>
                   <div>
-                    <h4 className="font-medium text-print-text">Address</h4>
-                    <p className="text-print-text/80">123 Print Avenue, Suite 101<br />Designville, CA 90210</p>
+                    <h4 className="font-medium text-print-gold text-lg">Address</h4>
+                    <p className="text-print-text/90">123 Creative Avenue, Indiranagar<br />Bangalore, Karnataka 560038</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-print-lightBackground p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-print-gold">Business Hours</h3>
-              <div className="space-y-2 text-print-text/80">
-                <div className="flex justify-between">
+            <div className="bg-print-gold/10 p-6 rounded-lg backdrop-blur-sm border border-print-gold/30 shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-print-gold">Studio Hours</h3>
+              <div className="space-y-3 text-print-text/90">
+                <div className="flex justify-between border-b border-print-gold/20 pb-2">
                   <span>Monday - Friday</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span className="font-medium">10:00 AM - 7:00 PM</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between border-b border-print-gold/20 pb-2">
                   <span>Saturday</span>
-                  <span>10:00 AM - 4:00 PM</span>
+                  <span className="font-medium">11:00 AM - 5:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
-                  <span>Closed</span>
+                  <span className="font-medium">By Appointment Only</span>
                 </div>
               </div>
             </div>
