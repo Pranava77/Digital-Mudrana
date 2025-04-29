@@ -1,14 +1,13 @@
-
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FileText, Postcard, Image, LayoutGrid, Gallery, Printer, FileHeart } from 'lucide-react';
+import { FileText, Mail, Image, LayoutGrid, GalleryHorizontal, Printer, FileHeart } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    icon: <Postcard className="h-10 w-10 text-print-accent" />,
+    icon: <Mail className="h-10 w-10 text-print-accent" />,
     title: "Business Cards",
     description: "Premium business cards printed on high-quality stock with various finishes to make a memorable first impression."
   },
@@ -23,7 +22,7 @@ const services = [
     description: "Eye-catching posters in various sizes, perfect for promotions, events, or decorative purposes."
   },
   {
-    icon: <Gallery className="h-10 w-10 text-print-accent" />,
+    icon: <GalleryHorizontal className="h-10 w-10 text-print-accent" />,
     title: "Banners & Signs",
     description: "Durable indoor and outdoor banners and signs designed to withstand the elements while looking great."
   },
