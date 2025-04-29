@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,32 +8,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    icon: <Mail className="h-10 w-10 text-print-accent" />,
+    icon: <Mail className="h-10 w-10 text-print-gold" />,
     title: "Business Cards",
     description: "Premium business cards printed on high-quality stock with various finishes to make a memorable first impression."
   },
   {
-    icon: <FileText className="h-10 w-10 text-print-accent" />,
+    icon: <FileText className="h-10 w-10 text-print-gold" />,
     title: "Flyers & Brochures",
     description: "Full-color flyers and brochures that effectively communicate your message with stunning clarity."
   },
   {
-    icon: <Image className="h-10 w-10 text-print-accent" />,
+    icon: <Image className="h-10 w-10 text-print-gold" />,
     title: "Posters",
     description: "Eye-catching posters in various sizes, perfect for promotions, events, or decorative purposes."
   },
   {
-    icon: <GalleryHorizontal className="h-10 w-10 text-print-accent" />,
+    icon: <GalleryHorizontal className="h-10 w-10 text-print-gold" />,
     title: "Banners & Signs",
     description: "Durable indoor and outdoor banners and signs designed to withstand the elements while looking great."
   },
   {
-    icon: <FileHeart className="h-10 w-10 text-print-accent" />,
+    icon: <FileHeart className="h-10 w-10 text-print-gold" />,
     title: "Custom Stationery",
     description: "Personalized letterheads, envelopes, and notepads that reflect your brand's professional identity."
   },
   {
-    icon: <Printer className="h-10 w-10 text-print-accent" />,
+    icon: <Printer className="h-10 w-10 text-print-gold" />,
     title: "Custom Printing",
     description: "Specialized printing services tailored to your unique requirements and specifications."
   }
@@ -82,11 +83,11 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-gray-50">
+    <section id="services" ref={sectionRef} className="py-20 bg-print-darkPurple">
       <div className="container-section">
         <div ref={headingRef} className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-print-blue mb-4">Our Printing Services</h2>
-          <p className="text-lg text-print-blue/70 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-print-gold mb-4">Our Printing Services</h2>
+          <p className="text-lg text-print-text max-w-2xl mx-auto">
             We offer a comprehensive range of high-quality printing services to meet all your business and personal needs.
           </p>
         </div>
@@ -99,8 +100,8 @@ const ServicesSection = () => {
               className="service-card"
             >
               <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-print-blue mb-2">{service.title}</h3>
-              <p className="text-print-blue/70">{service.description}</p>
+              <h3 className="text-xl font-semibold text-print-gold mb-2">{service.title}</h3>
+              <p className="text-print-text">{service.description}</p>
             </div>
           ))}
         </div>

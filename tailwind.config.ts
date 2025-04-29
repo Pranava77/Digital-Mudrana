@@ -64,11 +64,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				print: {
-					blue: '#1a365d', 
-					accent: '#3b82f6',
-					orange: '#f97316',
-					light: '#f8fafc',
-					dark: '#0f172a',
+					purple: '#742459',
+					gold: '#FFD934',
+					orange: '#FF8042',
+					peach: '#FFA87A',
+					darkPurple: '#501A3E',
+					lightPeach: '#FFE8D6',
+					background: '#2A1828',
+					lightBackground: '#3F2439',
+					text: '#FFE8D6'
 				}
 			},
 			borderRadius: {
@@ -119,6 +123,9 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'fade-in-right': 'fade-in-right 0.5s ease-out'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			}
 		}
 	},

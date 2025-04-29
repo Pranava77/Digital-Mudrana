@@ -7,39 +7,39 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 300 25% 13%;
+    --foreground: 30 100% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 300 28% 20%;
+    --card-foreground: 30 100% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 300 28% 20%;
+    --popover-foreground: 30 100% 92%;
 
-    --primary: 215 50% 23%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 47 100% 60%;
+    --primary-foreground: 300 25% 13%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 20 100% 63%;
+    --secondary-foreground: 300 25% 13%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 300 15% 25%;
+    --muted-foreground: 30 50% 85%;
 
-    --accent: 220 70% 50%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 20 100% 63%;
+    --accent-foreground: 300 25% 13%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 30 100% 92%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 300 15% 30%;
+    --input: 300 15% 30%;
+    --ring: 20 100% 63%;
 
     --radius: 0.5rem;
   }
 
   body {
-    @apply bg-background text-foreground font-sans scroll-smooth;
+    @apply bg-print-background text-print-text font-sans scroll-smooth;
     font-family: 'Inter', sans-serif;
   }
 
@@ -57,15 +57,15 @@
   }
 
   .button-primary {
-    @apply bg-print-accent hover:bg-print-accent/90 text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center gap-2;
+    @apply bg-print-gold hover:bg-print-gold/90 text-print-purple font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center gap-2;
   }
 
   .button-secondary {
-    @apply bg-white hover:bg-gray-100 text-print-blue font-semibold py-3 px-6 rounded-md border border-gray-200 transition-all duration-300 inline-flex items-center gap-2;
+    @apply bg-print-orange hover:bg-print-orange/90 text-print-purple font-semibold py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center gap-2;
   }
 
   .service-card {
-    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply bg-print-lightBackground rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 
   .portfolio-item {
@@ -77,11 +77,11 @@
   }
 
   .testimonial-card {
-    @apply bg-white p-6 rounded-lg shadow-md relative;
+    @apply bg-print-lightBackground p-6 rounded-lg shadow-md relative;
   }
 
   .testimonial-card::before {
     content: '"';
-    @apply absolute text-6xl text-gray-200 -top-4 left-2 font-serif;
+    @apply absolute text-6xl text-print-gold/30 -top-4 left-2 font-serif;
   }
 }

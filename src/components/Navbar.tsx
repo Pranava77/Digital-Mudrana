@@ -47,12 +47,13 @@ const Navbar = () => {
   return (
     <header className={cn(
       "fixed top-0 w-full z-50 transition-all duration-300",
-      scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+      scrolled ? "bg-print-background shadow-md py-3" : "bg-transparent py-5"
     )}>
       <div className="container-section py-0">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-print-blue font-bold text-2xl">Vivid<span className="text-print-orange">Print</span></span>
+            <img src="/logo.png" alt="Digital Mudrana Logo" className="h-12" />
+            <span className="text-print-gold font-bold text-2xl">Digital <span className="text-print-orange">Mudrana</span></span>
           </div>
           
           <nav className="hidden md:flex items-center space-x-1">
@@ -63,15 +64,15 @@ const Navbar = () => {
                 className={cn(
                   "px-4 py-2 rounded-md text-sm font-medium transition-colors",
                   activeSection === section 
-                    ? "text-print-accent" 
-                    : "text-print-blue hover:text-print-accent"
+                    ? "text-print-gold" 
+                    : "text-print-text hover:text-print-orange"
                 )}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
             <Button 
-              className="ml-4 bg-print-accent hover:bg-print-accent/90"
+              className="ml-4 bg-print-gold hover:bg-print-gold/90 text-print-purple"
               onClick={() => scrollToSection('contact')}
             >
               Get a Quote
@@ -82,7 +83,7 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="text-print-blue"
+              className="text-print-gold"
               onClick={() => scrollToSection('contact')}
             >
               Contact Us

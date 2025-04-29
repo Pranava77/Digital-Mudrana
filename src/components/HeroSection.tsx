@@ -54,7 +54,7 @@ const HeroSection = () => {
     <section
       id="hero"
       ref={heroRef}
-      className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-print-blue/5 to-print-blue/10"
+      className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-print-darkPurple to-print-background"
     >
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574002332972-fd2e0f7f1ea9?auto=format&fit=crop&q=80&w=2069')] bg-cover bg-center opacity-10"></div>
       
@@ -62,13 +62,13 @@ const HeroSection = () => {
         <div className="max-w-3xl">
           <h1 
             ref={headingRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-print-blue mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-print-gold mb-4"
           >
             High-Quality Digital Printing for Every Need
           </h1>
           <p 
             ref={taglineRef}
-            className="text-xl md:text-2xl text-print-blue/80 mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-print-text mb-8 leading-relaxed"
           >
             Bringing your ideas to life with stunning prints that make a lasting impression.
           </p>
@@ -91,10 +91,10 @@ const HeroSection = () => {
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div 
-          className="w-8 h-8 border-2 border-print-blue/40 rounded-full flex items-center justify-center cursor-pointer"
+          className="w-8 h-8 border-2 border-print-gold rounded-full flex items-center justify-center cursor-pointer"
           onClick={scrollToServices}
         >
-          <ArrowRight className="h-4 w-4 text-print-blue/70 rotate-90" />
+          <ArrowRight className="h-4 w-4 text-print-gold rotate-90" />
         </div>
       </div>
     </section>

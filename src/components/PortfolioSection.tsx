@@ -97,11 +97,11 @@ const PortfolioSection = () => {
   }, []);
 
   return (
-    <section id="portfolio" ref={sectionRef} className="py-20 bg-white">
+    <section id="portfolio" ref={sectionRef} className="py-20 bg-print-background">
       <div className="container-section">
         <div ref={headingRef} className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-print-blue mb-4">Our Portfolio</h2>
-          <p className="text-lg text-print-blue/70 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-print-gold mb-4">Our Portfolio</h2>
+          <p className="text-lg text-print-text/70 max-w-2xl mx-auto">
             Take a look at some of our recent projects showcasing the quality and versatility of our printing services.
           </p>
         </div>
@@ -121,10 +121,10 @@ const PortfolioSection = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-print-blue/0 group-hover:bg-print-blue/40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                <div className="p-4 text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="text-sm text-white/90">{item.category}</p>
+              <div className="absolute inset-0 bg-print-purple/0 group-hover:bg-print-purple/70 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                <div className="p-4 text-print-text text-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <h3 className="text-xl font-bold text-print-gold">{item.title}</h3>
+                  <p className="text-sm text-print-peach">{item.category}</p>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const PortfolioSection = () => {
       </div>
       
       <Dialog open={!!selectedItem} onOpenChange={(open) => !open && setSelectedItem(null)}>
-        <DialogContent className="max-w-4xl w-[90%] p-0 overflow-hidden bg-white">
+        <DialogContent className="max-w-4xl w-[90%] p-0 overflow-hidden bg-print-lightBackground">
           {selectedItem && (
             <div className="flex flex-col md:flex-row">
               <div className="md:w-2/3">
@@ -145,9 +145,9 @@ const PortfolioSection = () => {
               </div>
               <div className="p-6 md:w-1/3 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-print-blue mb-2">{selectedItem.title}</h3>
-                  <p className="text-sm text-print-accent mb-4">{selectedItem.category}</p>
-                  <p className="text-print-blue/70">{selectedItem.description}</p>
+                  <h3 className="text-2xl font-bold text-print-gold mb-2">{selectedItem.title}</h3>
+                  <p className="text-sm text-print-orange mb-4">{selectedItem.category}</p>
+                  <p className="text-print-text/90">{selectedItem.description}</p>
                 </div>
                 <button 
                   className="button-primary mt-4 justify-center"
@@ -158,7 +158,7 @@ const PortfolioSection = () => {
               </div>
               <button 
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+                className="absolute top-4 right-4 text-print-text/50 hover:text-print-gold"
               >
                 <X className="h-6 w-6" />
               </button>
