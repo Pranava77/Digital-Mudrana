@@ -1,6 +1,4 @@
-
 import { ArrowRight } from 'lucide-react';
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -8,23 +6,20 @@ const Footer = () => {
       behavior: 'smooth'
     });
   };
-
-  return (
-    <footer className="bg-print-darkPurple text-print-text py-12">
+  return <footer className="bg-print-darkPurple text-print-text py-12">
       <div className="container-section">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.png" alt="Digital Mudrana Logo" className="h-10" />
+              <img alt="Digital Mudrana Logo" src="/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png" className="h-20" />
               <span className="text-print-gold font-bold text-2xl">Digital <span className="text-print-orange">Mudrana</span></span>
             </div>
             <p className="text-print-text/70 mb-6 max-w-md">
               Professional printing services for all your business and personal needs. Quality results delivered on time, every time.
             </p>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="inline-flex items-center text-print-gold hover:text-print-orange transition-colors"
-            >
+            <button onClick={() => document.getElementById('contact')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="inline-flex items-center text-print-gold hover:text-print-orange transition-colors">
               Get Started <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </div>
@@ -32,32 +27,26 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-print-gold">Quick Links</h3>
             <ul className="space-y-2">
-              {['services', 'portfolio', 'testimonials', 'contact'].map((section) => (
-                <li key={section}>
-                  <button
-                    onClick={() => document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-print-text/70 hover:text-print-orange transition-colors"
-                  >
+              {['services', 'portfolio', 'testimonials', 'contact'].map(section => <li key={section}>
+                  <button onClick={() => document.getElementById(section)?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-print-text/70 hover:text-print-orange transition-colors">
                     {section.charAt(0).toUpperCase() + section.slice(1)}
                   </button>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold mb-4 text-print-gold">Services</h3>
             <ul className="space-y-2">
-              {['Business Cards', 'Flyers & Brochures', 'Posters', 'Banners & Signs', 'Custom Printing'].map((service) => (
-                <li key={service}>
-                  <button
-                    onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-print-text/70 hover:text-print-orange transition-colors"
-                  >
+              {['Business Cards', 'Flyers & Brochures', 'Posters', 'Banners & Signs', 'Custom Printing'].map(service => <li key={service}>
+                  <button onClick={() => document.getElementById('services')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="text-print-text/70 hover:text-print-orange transition-colors">
                     {service}
                   </button>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
         </div>
@@ -73,8 +62,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
