@@ -12,6 +12,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
+import ImageCarousel from '@/components/ImageCarousel';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,6 +38,17 @@ const Index = () => {
         }
       );
     });
+    
+    // Apply magnetic effect to appropriate cards
+    const applyMagneticEffect = () => {
+      const cards = document.querySelectorAll('.magnetic-card');
+      cards.forEach(card => {
+        card.classList.add('transition-active');
+      });
+    };
+    
+    // Delay to ensure DOM is fully loaded
+    setTimeout(applyMagneticEffect, 500);
 
     // Cleanup on component unmount
     return () => {
@@ -50,6 +62,7 @@ const Index = () => {
       <HeroSection />
       <ServicesSection />
       <PortfolioSection />
+      <ImageCarousel />
       <ClientLogosMarquee />
       <TestimonialCarousel />
       <div id="faq">
@@ -57,6 +70,7 @@ const Index = () => {
       </div>
       <ContactSection />
       <Footer />
+      <Toaster />
     </div>
   );
 };

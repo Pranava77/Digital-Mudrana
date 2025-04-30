@@ -1,6 +1,7 @@
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
+import gsap from 'gsap';
 
 interface SparkButtonProps {
   children: React.ReactNode;
@@ -21,9 +22,11 @@ const SparkButton = ({
 }: SparkButtonProps) => {
   const [sparks, setSparks] = useState<{ id: number; style: React.CSSProperties }[]>([]);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const sparkCount = 20; // Number of sparks per click
   
-  const createSparks = (e: React.MouseEvent) => {
+  // Create unique spark effect with GSAP
+  const createSparks = useCallback((e: React.MouseEvent) => {
     // Only trigger if we have the button ref and button is not disabled
     if (!buttonRef.current || disabled) return;
     
@@ -35,70 +38,78 @@ const SparkButton = ({
     // Create new sparks with random properties
     const newSparks = Array.from({ length: sparkCount }).map((_, i) => {
       const angle = Math.random() * Math.PI * 2;
-      const distance = Math.random() * 50 + 30;
-      const duration = Math.random() * 0.6 + 0.4;
-      const size = Math.random() * 5 + 3;
-      const hue = Math.random() * 60 + 30; // Gold/orange colors
+      const id = Date.now() + i;
       
       return {
-        id: Date.now() + i,
+        id,
         style: {
           left: `${x}px`,
           top: `${y}px`,
-          width: `${size}px`,
-          height: `${size}px`,
-          backgroundColor: `hsl(${hue}, 100%, 65%)`,
           position: 'absolute',
+          backgroundColor: `hsl(${Math.random() * 60 + 30}, 100%, 65%)`,
+          width: `${Math.random() * 5 + 3}px`,
+          height: `${Math.random() * 5 + 3}px`,
           borderRadius: '50%',
           pointerEvents: 'none',
-          transform: 'translate(-50%, -50%)',
-          animation: `spark-fly-${angle < Math.PI ? 'up' : 'down'} ${duration}s forwards`,
           opacity: 1,
+          transform: 'translate(-50%, -50%) scale(0)',
         } as React.CSSProperties,
       };
     });
     
     setSparks(prev => [...prev, ...newSparks]);
     
-    // Clean up old sparks after animation
-    setTimeout(() => {
-      setSparks(prev => prev.filter(spark => !newSparks.find(ns => ns.id === spark.id)));
-    }, 1000);
+    // Animate the sparks with GSAP for smoother animations
+    requestAnimationFrame(() => {
+      newSparks.forEach(spark => {
+        const element = document.getElementById(`spark-${spark.id}`);
+        if (element) {
+          const angle = Math.random() * Math.PI * 2;
+          const distance = Math.random() * 70 + 30;
+          const duration = Math.random() * 0.8 + 0.6;
+          
+          gsap.to(element, {
+            x: Math.cos(angle) * distance,
+            y: Math.sin(angle) * distance,
+            opacity: 0,
+            scale: 1,
+            duration: duration,
+            ease: "power2.out",
+            onComplete: () => {
+              setSparks(prev => prev.filter(s => s.id !== spark.id));
+            }
+          });
+        }
+      });
+    });
+    
+    // Create sand time animation effect on button
+    if (timelineRef.current) {
+      timelineRef.current.kill();
+    }
+    
+    const tl = gsap.timeline();
+    timelineRef.current = tl;
+    
+    // Subtle sand time effect
+    tl.to(buttonRef.current, {
+      scale: 0.97,
+      duration: 0.1,
+    }).to(buttonRef.current, {
+      scale: 1,
+      duration: 0.3,
+      ease: "elastic.out(1, 0.3)"
+    });
     
     // Call the original onClick handler
     if (onClick) onClick();
-  };
+  }, [disabled, onClick, sparkCount]);
   
   return (
-    <div className="relative overflow-hidden">
-      <style>
-        {`
-        @keyframes spark-fly-up {
-          0% {
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translate(calc(-50% + ${Math.random() * 100 - 50}px), calc(-50% - ${Math.random() * 60 + 40}px)) scale(1);
-            opacity: 0;
-          }
-        }
-        @keyframes spark-fly-down {
-          0% {
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translate(calc(-50% + ${Math.random() * 100 - 50}px), calc(-50% + ${Math.random() * 60 + 40}px)) scale(1);
-            opacity: 0;
-          }
-        }
-        `}
-      </style>
-      
+    <div className="relative overflow-visible">
       <Button
         ref={buttonRef}
-        className={className}
+        className={`${className} relative overflow-hidden transition-transform`}
         variant={variant}
         onClick={createSparks}
         disabled={disabled}
@@ -109,6 +120,7 @@ const SparkButton = ({
       
       {sparks.map(spark => (
         <div
+          id={`spark-${spark.id}`}
           key={spark.id}
           style={spark.style}
         />

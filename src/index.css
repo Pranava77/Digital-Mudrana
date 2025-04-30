@@ -84,4 +84,53 @@
     content: '"';
     @apply absolute text-6xl text-print-gold/30 -top-4 left-2 font-serif;
   }
+  
+  /* Modern Marquee styling */
+  .marquee-container {
+    @apply py-4 md:py-6;
+  }
+  
+  .logo-card {
+    @apply flex flex-col items-center transition-all duration-300;
+  }
+  
+  .error-image {
+    @apply opacity-50 grayscale;
+  }
+  
+  /* Fixed Dialog issue - Keep only one X icon */
+  .dialog-content [data-state="open"] {
+    @apply relative;
+  }
+  
+  /* Only let the actual DialogClose X be visible */
+  [role="dialog"] button[type="button"]:not([aria-label="Close"]) {
+    @apply hidden;
+  }
+
+  /* Magnetic Card Effects */
+  .magnetic-card {
+    @apply relative transition-all duration-300;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .magnetic-card > * {
+    @apply relative z-10;
+  }
+  
+  .magnetic-card.transition-active {
+    @apply hover:z-10;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  /* Add GSAP Sand Time animation to buttons */
+  button {
+    @apply transition-all duration-300;
+  }
+  
+  /* Ensure Dialog has only one close button */
+  .dialog-overlay {
+    @apply fixed inset-0 z-50 bg-black/80;
+  }
 }
