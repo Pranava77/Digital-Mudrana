@@ -11,6 +11,7 @@ import ClientLogosMarquee from '@/components/ClientLogosMarquee';
 import FAQAccordion from '@/components/FAQAccordion';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import { Toaster } from '@/components/ui/toaster';
 
 gsap.registerPlugin(ScrollTrigger);
 

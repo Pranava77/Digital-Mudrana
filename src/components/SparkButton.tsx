@@ -7,21 +7,25 @@ interface SparkButtonProps {
   onClick?: () => void;
   className?: string;
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  disabled?: boolean;
+  size?: "default" | "sm" | "lg" | "icon";
 }
 
 const SparkButton = ({ 
   children, 
   onClick, 
   className = "",
-  variant = "default"
+  variant = "default",
+  disabled = false,
+  size = "default"
 }: SparkButtonProps) => {
   const [sparks, setSparks] = useState<{ id: number; style: React.CSSProperties }[]>([]);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const sparkCount = 20; // Number of sparks per click
   
   const createSparks = (e: React.MouseEvent) => {
-    // Only trigger if we have the button ref
-    if (!buttonRef.current) return;
+    // Only trigger if we have the button ref and button is not disabled
+    if (!buttonRef.current || disabled) return;
     
     // Get click position relative to button
     const rect = buttonRef.current.getBoundingClientRect();
@@ -67,7 +71,8 @@ const SparkButton = ({
   
   return (
     <div className="relative overflow-hidden">
-      <style jsx>{`
+      <style>
+        {`
         @keyframes spark-fly-up {
           0% {
             transform: translate(-50%, -50%) scale(0);
@@ -88,13 +93,16 @@ const SparkButton = ({
             opacity: 0;
           }
         }
-      `}</style>
+        `}
+      </style>
       
       <Button
         ref={buttonRef}
         className={className}
         variant={variant}
         onClick={createSparks}
+        disabled={disabled}
+        size={size}
       >
         {children}
       </Button>

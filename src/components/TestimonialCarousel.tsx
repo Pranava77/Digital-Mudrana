@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import type { CarouselApi } from "embla-carousel-react";
 
 interface Testimonial {
   name: string;
@@ -46,13 +47,23 @@ const testimonials: Testimonial[] = [
 
 const TestimonialCarousel = () => {
   const [current, setCurrent] = useState(0);
+  const [api, setApi] = useState<CarouselApi | null>(null);
 
-  const handleSelect = (index: number) => {
-    setCurrent(index);
-  };
+  React.useEffect(() => {
+    if (!api) return;
+    
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   return (
-    <div className="bg-print-purple py-20">
+    <div className="bg-print-purple py-20" id="testimonials">
       <div className="container-section">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-print-gold">What Our Clients Say</h2>
@@ -68,10 +79,7 @@ const TestimonialCarousel = () => {
               loop: true,
             }}
             className="w-full"
-            onSelect={(api) => {
-              const current = api?.selectedScrollSnap();
-              setCurrent(current || 0);
-            }}
+            setApi={setApi}
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
@@ -105,7 +113,7 @@ const TestimonialCarousel = () => {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => handleSelect(index)}
+                onClick={() => api?.scrollTo(index)}
                 className={cn(
                   "w-3 h-3 rounded-full transition-all",
                   current === index ? "bg-print-gold" : "bg-print-gold/30"

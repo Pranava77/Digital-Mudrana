@@ -1,12 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import SparkButton from './SparkButton';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -27,11 +27,13 @@ const Navbar = () => {
         }
       }
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -41,7 +43,9 @@ const Navbar = () => {
       });
     }
   };
-  return <header className={cn("fixed top-0 w-full z-50 transition-all duration-300", scrolled ? "bg-print-background shadow-md py-3" : "bg-transparent py-5")}>
+  
+  return (
+    <header className={cn("fixed top-0 w-full z-50 transition-all duration-300", scrolled ? "bg-print-background shadow-md py-3" : "bg-transparent py-5")}>
       <div className="container-section py-0">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -50,21 +54,39 @@ const Navbar = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-1">
-            {['hero', 'services', 'portfolio', 'testimonials', 'faq', 'contact'].map(section => <button key={section} onClick={() => scrollToSection(section)} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-colors", activeSection === section ? "text-print-gold" : "text-print-text hover:text-print-orange")}>
+            {['hero', 'services', 'portfolio', 'testimonials', 'faq', 'contact'].map(section => (
+              <button 
+                key={section} 
+                onClick={() => scrollToSection(section)} 
+                className={cn(
+                  "px-4 py-2 rounded-md text-sm font-medium transition-colors", 
+                  activeSection === section ? "text-print-gold" : "text-print-text hover:text-print-orange"
+                )}
+              >
                 {section === "hero" ? "Home" : section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>)}
-            <SparkButton className="ml-4 bg-print-gold hover:bg-print-gold/90 text-print-purple" onClick={() => scrollToSection('contact')}>
+              </button>
+            ))}
+            <SparkButton 
+              className="ml-4 bg-print-gold hover:bg-print-gold/90 text-print-purple" 
+              onClick={() => scrollToSection('contact')}
+            >
               Get a Quote
             </SparkButton>
           </nav>
           
           <div className="md:hidden">
-            <SparkButton variant="ghost" size="sm" className="text-print-gold" onClick={() => scrollToSection('contact')}>
+            <SparkButton 
+              variant="ghost" 
+              className="text-print-gold" 
+              onClick={() => scrollToSection('contact')}
+            >
               Contact Us
             </SparkButton>
           </div>
         </div>
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Navbar;
