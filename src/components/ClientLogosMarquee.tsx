@@ -7,29 +7,37 @@ const ClientLogosMarquee = () => {
   const firstMarqueeRef = useRef<HTMLDivElement>(null);
   const secondMarqueeRef = useRef<HTMLDivElement>(null);
 
-  // Client logos with their names - using only working images
-  const clientLogos = [{
-    name: 'Tata',
-    logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png'
-  }, {
-    name: 'Infosys',
-    logo: '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png'
-  }, {
-    name: 'Wipro',
-    logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png'
-  }, {
-    name: 'Reliance',
-    logo: '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png'
-  }, {
-    name: 'Titan',
-    logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png'
-  }, {
-    name: 'Myntra',
-    logo: '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png'
-  }, {
-    name: 'Flipkart',
-    logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png'
-  }];
+  // Client logos with their names - using placeholder images for now
+  const clientLogos = [
+    {
+      name: 'Tata',
+      logo: '/clients/tata-logo.png'
+    },
+    {
+      name: 'Infosys',
+      logo: '/clients/infosys-logo.png'
+    },
+    {
+      name: 'Wipro',
+      logo: '/clients/wipro-logo.png'
+    },
+    {
+      name: 'Reliance',
+      logo: '/clients/reliance-logo.png'
+    },
+    {
+      name: 'Titan',
+      logo: '/clients/titan-logo.png'
+    },
+    {
+      name: 'Myntra',
+      logo: '/clients/myntra-logo.png'
+    },
+    {
+      name: 'Flipkart',
+      logo: '/clients/flipkart-logo.png'
+    }
+  ];
   useEffect(() => {
     const firstMarquee = firstMarqueeRef.current;
     const secondMarquee = secondMarqueeRef.current;
@@ -47,40 +55,43 @@ const ClientLogosMarquee = () => {
       marqueeAnimation.play();
 
       // Pause on hover for better user experience
-      marqueeRef.current?.addEventListener('mouseenter', () => marqueeAnimation.pause());
-      marqueeRef.current?.addEventListener('mouseleave', () => marqueeAnimation.play());
+      const pauseAnimation = () => marqueeAnimation.pause();
+      const resumeAnimation = () => marqueeAnimation.play();
+
+      marqueeRef.current?.addEventListener('mouseenter', pauseAnimation);
+      marqueeRef.current?.addEventListener('mouseleave', resumeAnimation);
 
       // Clean up on component unmount
       return () => {
-        marqueeRef.current?.removeEventListener('mouseenter', () => marqueeAnimation.pause());
-        marqueeRef.current?.removeEventListener('mouseleave', () => marqueeAnimation.play());
+        marqueeRef.current?.removeEventListener('mouseenter', pauseAnimation);
+        marqueeRef.current?.removeEventListener('mouseleave', resumeAnimation);
         marqueeAnimation.kill();
       };
     }
   }, []);
-  return <section className="py-12 bg-print-lightBackground overflow-hidden md:py-[138px]">
-      <div className="container-section md:py-8 py-0">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-print-gold reveal-item">Trusted by Leading Brands</h2>
+  return <section className="py-12 bg-print-lightBackground overflow-hidden md:py-20">
+      <div className="container mx-auto px-4 md:px-6 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-print-gold reveal-item">Trusted by Leading Brands</h2>
       </div>
       
-      <div ref={marqueeRef} className="marquee-container w-full overflow-hidden relative rounded-md h-50vh">
+      <div ref={marqueeRef} className="marquee-container w-full overflow-hidden relative h-[200px] md:h-[250px]">
         <div className="flex absolute" style={{
         minWidth: '100%'
       }}>
-          <div ref={firstMarqueeRef} className="flex items-center gap-8 md:gap-16 py-4">
-            {clientLogos.map((client, index) => <div key={`first-${index}`} className="logo-card group">
-                <div className="w-54 h-54 md:w-32 md:h-32 bg-print-background/30 backdrop-blur-sm rounded-lg flex items-center justify-center p-4 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105">
-                  <img src={client.logo} alt={`${client.name} logo`} className="max-h-16 md:max-h-20 max-w-full object-contain" />
+          <div ref={firstMarqueeRef} className="flex items-center space-x-16 md:space-x-24 py-4 mx-8">
+            {clientLogos.map((client, index) => <div key={`first-${index}`} className="logo-card group shrink-0">
+                <div className="w-28 h-28 md:w-36 md:h-36 bg-print-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center p-6 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105 border border-print-gold/10">
+                  <img src={client.logo} alt={`${client.name} logo`} className="max-h-16 md:max-h-20 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" />
                 </div>
-                <span className="block mt-2 text-center text-print-gold group-hover:text-print-orange transition-colors duration-300">{client.name}</span>
+                <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300">{client.name}</span>
               </div>)}
           </div>
-          <div ref={secondMarqueeRef} className="flex items-center gap-8 md:gap-16 py-4">
-            {clientLogos.map((client, index) => <div key={`second-${index}`} className="logo-card group">
-                <div className="w-24 h-24 md:w-32 md:h-32 bg-print-background/30 backdrop-blur-sm rounded-lg flex items-center justify-center p-4 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105">
-                  <img src={client.logo} alt={`${client.name} logo`} className="max-h-16 md:max-h-20 max-w-full object-contain" />
+          <div ref={secondMarqueeRef} className="flex items-center space-x-16 md:space-x-24 py-4 mx-8">
+            {clientLogos.map((client, index) => <div key={`second-${index}`} className="logo-card group shrink-0">
+                <div className="w-28 h-28 md:w-36 md:h-36 bg-print-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center p-6 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105 border border-print-gold/10">
+                  <img src={client.logo} alt={`${client.name} logo`} className="max-h-16 md:max-h-20 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" />
                 </div>
-                <span className="block mt-2 text-center text-print-gold group-hover:text-print-orange transition-colors duration-300">{client.name}</span>
+                <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300">{client.name}</span>
               </div>)}
           </div>
         </div>
