@@ -13,7 +13,6 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import ImageCarousel from '@/components/ImageCarousel';
-import GlobalSparkEffect from '@/components/GlobalSparkEffect';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,7 +71,6 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <Toaster />
-      <GlobalSparkEffect />
     </div>
   );
 };
