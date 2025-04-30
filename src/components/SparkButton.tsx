@@ -23,7 +23,7 @@ const SparkButton = ({
   const [sparks, setSparks] = useState<{ id: number; style: React.CSSProperties }[]>([]);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
-  const sparkCount = 20; // Number of sparks per click
+  const sparkCount = 30; // Increased number of sparks
   
   // Create unique spark effect with GSAP
   const createSparks = useCallback((e: React.MouseEvent) => {
@@ -35,7 +35,7 @@ const SparkButton = ({
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     
-    // Create new sparks with random properties
+    // Create new sparks with enhanced properties
     const newSparks = Array.from({ length: sparkCount }).map((_, i) => {
       const angle = Math.random() * Math.PI * 2;
       const id = Date.now() + i;
@@ -47,8 +47,8 @@ const SparkButton = ({
           top: `${y}px`,
           position: 'absolute',
           backgroundColor: `hsl(${Math.random() * 60 + 30}, 100%, 65%)`,
-          width: `${Math.random() * 5 + 3}px`,
-          height: `${Math.random() * 5 + 3}px`,
+          width: `${Math.random() * 7 + 3}px`, // Larger particles
+          height: `${Math.random() * 7 + 3}px`, // Larger particles
           borderRadius: '50%',
           pointerEvents: 'none',
           opacity: 1,
@@ -65,14 +65,14 @@ const SparkButton = ({
         const element = document.getElementById(`spark-${spark.id}`);
         if (element) {
           const angle = Math.random() * Math.PI * 2;
-          const distance = Math.random() * 70 + 30;
-          const duration = Math.random() * 0.8 + 0.6;
+          const distance = Math.random() * 100 + 50; // Increased distance
+          const duration = Math.random() * 1.0 + 0.6; // Longer duration
           
           gsap.to(element, {
             x: Math.cos(angle) * distance,
             y: Math.sin(angle) * distance,
             opacity: 0,
-            scale: 1,
+            scale: Math.random() * 2 + 1, // More varied scaling for intensity
             duration: duration,
             ease: "power2.out",
             onComplete: () => {
@@ -91,14 +91,17 @@ const SparkButton = ({
     const tl = gsap.timeline();
     timelineRef.current = tl;
     
-    // Subtle sand time effect
+    // Enhanced sand time effect
     tl.to(buttonRef.current, {
-      scale: 0.97,
-      duration: 0.1,
+      scale: 0.95,
+      duration: 0.15,
+    }).to(buttonRef.current, {
+      scale: 1.05,
+      duration: 0.15,
     }).to(buttonRef.current, {
       scale: 1,
       duration: 0.3,
-      ease: "elastic.out(1, 0.3)"
+      ease: "elastic.out(1.2, 0.4)"
     });
     
     // Call the original onClick handler
