@@ -10,14 +10,14 @@ const ClientLogosMarquee = () => {
   const firstMarqueeRef = useRef<HTMLDivElement>(null);
   const secondMarqueeRef = useRef<HTMLDivElement>(null);
   
-  // Client logos with their names
+  // Client logos with their names - using only working images
   const clientLogos = [
     { name: 'Tata', logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png' },
     { name: 'Infosys', logo: '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png' },
     { name: 'Wipro', logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png' },
-    { name: 'Reliance', logo: '/broken-image.jpg' }, // Broken image for demonstration
+    { name: 'Reliance', logo: '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png' },
     { name: 'Titan', logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png' },
-    { name: 'Myntra', logo: '/another-broken-image.png' }, // Another broken image
+    { name: 'Myntra', logo: '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png' },
     { name: 'Flipkart', logo: '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png' },
   ];
 
@@ -73,10 +73,6 @@ const ClientLogosMarquee = () => {
                     src={client.logo} 
                     alt={`${client.name} logo`} 
                     className="max-h-16 md:max-h-20 max-w-full object-contain"
-                    onError={(e) => {
-                      e.currentTarget.src = '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png';
-                      e.currentTarget.classList.add('error-image');
-                    }}
                   />
                 </div>
                 <span className="block mt-2 text-center text-print-gold group-hover:text-print-orange transition-colors duration-300">{client.name}</span>
@@ -94,10 +90,6 @@ const ClientLogosMarquee = () => {
                     src={client.logo} 
                     alt={`${client.name} logo`} 
                     className="max-h-16 md:max-h-20 max-w-full object-contain"
-                    onError={(e) => {
-                      e.currentTarget.src = '/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png';
-                      e.currentTarget.classList.add('error-image');
-                    }}
                   />
                 </div>
                 <span className="block mt-2 text-center text-print-gold group-hover:text-print-orange transition-colors duration-300">{client.name}</span>

@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -171,15 +172,17 @@ const ContactSection = () => {
                 className="min-h-32 bg-print-lightBackground/30 border-print-gold/30 text-print-text placeholder:text-print-text/50 focus:border-print-gold focus:ring-print-gold/30"
               />
             </div>
-            <SparkButton 
-              className="w-full bg-print-gold hover:bg-print-gold/90 text-print-purple font-medium text-lg py-6"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Sending..." : "Request a Premium Quote"}
-            </SparkButton>
+            <div>
+              <SparkButton 
+                className="w-full bg-print-gold hover:bg-print-gold/90 text-print-purple font-medium text-lg py-6"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Request a Premium Quote"}
+              </SparkButton>
+            </div>
           </form>
           
-          <div ref={infoRef} className="flex flex-col justify-between">
+          <div ref={infoRef} className="flex flex-col justify-between h-full">
             <div className="mb-8 bg-print-darkPurple/60 p-8 rounded-lg backdrop-blur-sm border border-print-gold/10 shadow-xl">
               <h3 className="text-3xl font-semibold mb-4 text-print-gold">Exclusive Service</h3>
               <p className="mb-8 text-print-text/90 text-lg">
