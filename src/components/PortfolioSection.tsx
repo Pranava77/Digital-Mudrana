@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,42 +11,42 @@ const portfolioItems = [
     id: 1,
     title: "Corporate Branding Package",
     category: "Branding",
-    imageUrl: "",
+    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Complete corporate identity package including business cards, letterheads, and branded materials."
   },
   {
     id: 2,
     title: "Event Promotion Materials",
     category: "Marketing",
-    imageUrl: "",
+    imageUrl: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Set of promotional materials designed for a major music festival, including posters, flyers, and tickets."
   },
   {
     id: 3,
     title: "Product Catalog Design",
     category: "Print",
-    imageUrl: "",
+    imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Premium catalog featuring high-quality product photography and detailed specifications."
   },
   {
     id: 4,
     title: "Restaurant Menu Collection",
     category: "Design",
-    imageUrl: "",
+    imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Set of elegantly designed menus for a fine dining restaurant, including food and wine listings."
   },
   {
     id: 5,
     title: "Conference Badge System",
     category: "Events",
-    imageUrl: "",
+    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Custom designed badge system for an international technology conference."
   },
   {
     id: 6,
     title: "Real Estate Marketing Package",
     category: "Marketing",
-    imageUrl: "",
+    imageUrl: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Complete marketing package for luxury real estate properties, including brochures and property cards."
   }
 ];

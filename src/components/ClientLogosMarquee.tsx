@@ -11,31 +11,31 @@ const ClientLogosMarquee = () => {
   const clientLogos = [
     {
       name: 'Tata',
-      logo: '/public/geo.jpeg'
+      logo: 'https://www.tata.com/content/dam/tata/images/home-page/desktop/logo.png'
     },
     {
       name: 'Infosys',
-      logo: '/clients/infosys-logo.png'
+      logo: 'https://www.infosys.com/content/dam/infosys-web/en/global-resources/media-resources/infosys-logo.svg'
     },
     {
       name: 'Wipro',
-      logo: '/clients/wipro-logo.png'
+      logo: 'https://www.wipro.com/content/dam/nexus/en/brand/images/wipro-logo.svg'
     },
     {
       name: 'Reliance',
-      logo: '/clients/reliance-logo.png'
+      logo: 'https://www.ril.com/getattachment/2c1a1a0c-0a0d-4c0a-8c0a-0a0d0a0d0a0d/Reliance-Industries-Limited-Logo.aspx'
     },
     {
       name: 'Titan',
-      logo: '/clients/titan-logo.png'
+      logo: 'https://www.titancompany.in/images/logo.png'
     },
     {
       name: 'Myntra',
-      logo: '/clients/myntra-logo.png'
+      logo: 'https://images.indianexpress.com/2021/01/myntra-logo-1200.jpg'
     },
     {
       name: 'Flipkart',
-      logo: '/clients/flipkart-logo.png'
+      logo: 'https://static-assets-web.flixcart.com/www/promos/new/20150528-140547-favicon-retina.png'
     }
   ];
   useEffect(() => {

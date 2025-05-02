@@ -56,7 +56,7 @@ const HeroSection = () => {
       ref={heroRef}
       className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-print-darkPurple to-print-background"
     >
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574002332972-fd2e0f7f1ea9?auto=format&fit=crop&q=80&w=2069')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-[url('/herotwo.jpg')] bg-cover bg-center opacity-20"></div>
       
       <div className="container-section relative z-10">
         <div className="max-w-3xl">
@@ -64,7 +64,7 @@ const HeroSection = () => {
             ref={headingRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-print-gold mb-4"
           >
-            High-Quality Digital Printing for Every Need
+            <span className='text-orange-500'>High-Quality </span>Digital Printing for Every Need
           </h1>
           <p 
             ref={taglineRef}
