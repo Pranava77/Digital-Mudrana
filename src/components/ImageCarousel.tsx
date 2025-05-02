@@ -22,27 +22,27 @@ const ImageCarousel = () => {
   
   const printingCenterImages = [
     {
-      src: 'https://images.unsplash.com/photo-1574002332972-fd2e0f7f1ea9',
+      src: 'public/offset.jpeg',
       alt: 'Digital printing press in operation',
       title: 'High-Volume Production'
     },
     {
-      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+      src: '/public/konica.jpg',
       alt: 'Design station with large format printer',
       title: 'Design & Large Format'
     },
     {
-      src: 'https://images.unsplash.com/broken-image',
+      src: '/public/cutter.jpeg',
       alt: 'Finishing and binding equipment',
       title: 'Finishing Department'
     },
+    // {
+    //   src: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
+    //   alt: 'Staff consulting with customers',
+    //   title: 'Customer Consultation'
+    // },
     {
-      src: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
-      alt: 'Staff consulting with customers',
-      title: 'Customer Consultation'
-    },
-    {
-      src: 'https://images.unsplash.com/another-broken-image',
+      src: '/public/paper.jpg',
       alt: 'Material sample display',
       title: 'Material Showcase'
     }
@@ -78,7 +78,7 @@ const ImageCarousel = () => {
             {printingCenterImages.map((image, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <Card className="overflow-hidden bg-print-lightBackground border-print-gold/20">
+                  <Card className="overflow-hidden  border-print-gold/20">
                     <CardContent className="p-0">
                       <div 
                         className="group relative cursor-pointer h-64 overflow-hidden"

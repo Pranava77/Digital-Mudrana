@@ -12,42 +12,42 @@ const portfolioItems = [
     id: 1,
     title: "Corporate Branding Package",
     category: "Branding",
-    imageUrl: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&q=80&w=2487",
+    imageUrl: "",
     description: "Complete corporate identity package including business cards, letterheads, and branded materials."
   },
   {
     id: 2,
     title: "Event Promotion Materials",
     category: "Marketing",
-    imageUrl: "https://images.unsplash.com/photo-1540397106260-e24a507a08ea?auto=format&fit=crop&q=80&w=2487",
+    imageUrl: "",
     description: "Set of promotional materials designed for a major music festival, including posters, flyers, and tickets."
   },
   {
     id: 3,
     title: "Product Catalog Design",
     category: "Print",
-    imageUrl: "https://images.unsplash.com/photo-1571867424488-4565932edb41?auto=format&fit=crop&q=80&w=2487",
+    imageUrl: "",
     description: "Premium catalog featuring high-quality product photography and detailed specifications."
   },
   {
     id: 4,
     title: "Restaurant Menu Collection",
     category: "Design",
-    imageUrl: "https://images.unsplash.com/photo-1583328709385-0703747257d7?auto=format&fit=crop&q=80&w=2487",
+    imageUrl: "",
     description: "Set of elegantly designed menus for a fine dining restaurant, including food and wine listings."
   },
   {
     id: 5,
     title: "Conference Badge System",
     category: "Events",
-    imageUrl: "https://images.unsplash.com/photo-1606761568499-5d7e7c2e1917?auto=format&fit=crop&q=80&w=2487",
+    imageUrl: "",
     description: "Custom designed badge system for an international technology conference."
   },
   {
     id: 6,
     title: "Real Estate Marketing Package",
     category: "Marketing",
-    imageUrl: "https://images.unsplash.com/photo-1600132788252-1a8e2640e4a8?auto=format&fit=crop&q=80&w=2487",
+    imageUrl: "",
     description: "Complete marketing package for luxury real estate properties, including brochures and property cards."
   }
 ];
