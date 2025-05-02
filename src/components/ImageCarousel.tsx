@@ -32,13 +32,13 @@ const ImageCarousel = () => {
       title: 'Design & Large Format'
     },
     {
-      src: '/public/cutter.jpeg',
+      src: '/cutter.jpeg',
       alt: 'Finishing and binding equipment',
       title: 'Finishing Department'
     },
     // {
     //   src: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
-    //   alt: 'Staff consulting with customers',
+    //   alt: 'Staff consulting with customers', 
     //   title: 'Customer Consultation'
     // },
     {
