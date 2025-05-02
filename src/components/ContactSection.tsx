@@ -196,7 +196,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-print-gold text-lg">Phone</h4>
-                    <p className="text-print-text/90">+91 8073005780 || 080 42036196</p>
+                    <p className="text-print-text/90">+91 8073005780 <br />+080 42036196</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -214,7 +214,12 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-print-gold text-lg">Address</h4>
-                    <p className="text-print-text/90">#23 1st cross Cauvery Nagara, Kathriguppe BSK 3rd Stage Bengaluru 560085.<br /> <br /></p>
+                    <p className="text-print-text/90">#23 1st cross Cauvery Nagara,
+                    <br />
+                    Kathriguppe BSK 3rd Stage
+                    <br />
+                     Bengaluru 560085. 
+                    </p>
                   </div>
                 </div>
               </div>
