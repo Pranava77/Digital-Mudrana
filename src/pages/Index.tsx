@@ -57,7 +57,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden select-none">
       <Navbar />
       <HeroSection />
       <ServicesSection />
