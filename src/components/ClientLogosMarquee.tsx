@@ -11,7 +11,7 @@ const ClientLogosMarquee = () => {
   const clientLogos = [
     {
       name: 'Tata',
-      logo: '/clients/tata-logo.png'
+      logo: '/public/geo.jpeg'
     },
     {
       name: 'Infosys',
@@ -74,13 +74,13 @@ const ClientLogosMarquee = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center text-print-gold reveal-item">Trusted by Leading Brands</h2>
       </div>
       
-      <div ref={marqueeRef} className="marquee-container w-full overflow-hidden relative h-[200px] md:h-[250px]">
+      <div ref={marqueeRef} className="marquee-container w-full overflow-hidden relative h-[200px] md:h-[200px]">
         <div className="flex absolute" style={{
         minWidth: '100%'
       }}>
           <div ref={firstMarqueeRef} className="flex items-center space-x-16 md:space-x-24 py-4 mx-8">
             {clientLogos.map((client, index) => <div key={`first-${index}`} className="logo-card group shrink-0">
-                <div className="w-28 h-28 md:w-36 md:h-36 bg-print-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center p-6 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105 border border-print-gold/10">
+                <div className="w-28 h-28 md:w-36 md:h-36 bg-print-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center p-2 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105 border border-print-gold/10">
                   <img src={client.logo} alt={`${client.name} logo`} className="max-h-16 md:max-h-20 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" />
                 </div>
                 <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300">{client.name}</span>

@@ -196,7 +196,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-print-gold text-lg">Phone</h4>
-                    <p className="text-print-text/90">+91 80-4123-5678</p>
+                    <p className="text-print-text/90">+91 8073005780 || 080 42036196</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -205,7 +205,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-print-gold text-lg">Email</h4>
-                    <p className="text-print-text/90">info@digitalmudrana.com</p>
+                    <p className="text-print-text/90">digitalmudrana@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -214,22 +214,22 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-print-gold text-lg">Address</h4>
-                    <p className="text-print-text/90">123 Creative Avenue, Indiranagar<br />Bangalore, Karnataka 560038</p>
+                    <p className="text-print-text/90">#23 1st cross Cauvery Nagara, Kathriguppe BSK 3rd Stage Bengaluru 560085.<br /> <br /></p>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-print-gold/10 p-6 rounded-lg backdrop-blur-sm border border-print-gold/30 shadow-lg">
               <h3 className="text-xl font-semibold mb-3 text-print-gold">Studio Hours</h3>
               <div className="space-y-3 text-print-text/90">
                 <div className="flex justify-between border-b border-print-gold/20 pb-2">
-                  <span>Monday - Friday</span>
+                  <span>Monday - Saturday</span>
                   <span className="font-medium">10:00 AM - 7:00 PM</span>
                 </div>
                 <div className="flex justify-between border-b border-print-gold/20 pb-2">
-                  <span>Saturday</span>
-                  <span className="font-medium">11:00 AM - 5:00 PM</span>
+                  <span>Lunch Break</span>
+                  <span className="font-medium">2:00 PM - 3:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
