@@ -22,12 +22,12 @@ const ImageCarousel = () => {
   
   const printingCenterImages = [
     {
-      src: 'public/offset.jpeg',
+      src: 'offset.jpeg',
       alt: 'Digital printing press in operation',
       title: 'High-Volume Production'
     },
     {
-      src: '/public/konica.jpg',
+      src: '/konica.jpg',
       alt: 'Design station with large format printer',
       title: 'Design & Large Format'
     },
@@ -42,7 +42,7 @@ const ImageCarousel = () => {
     //   title: 'Customer Consultation'
     // },
     {
-      src: '/public/paper.jpg',
+      src: 'paper.jpg',
       alt: 'Material sample display',
       title: 'Material Showcase'
     }
