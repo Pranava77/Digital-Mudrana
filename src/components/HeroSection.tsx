@@ -1,7 +1,7 @@
-
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
+import SplitType from 'split-type';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -38,6 +38,37 @@ const HeroSection = () => {
         "-=0.6"
       );
     }
+
+    if (headingRef.current) {
+      const splitText = new SplitType(headingRef.current, {
+        types: 'words',
+        wordClass: 'word-wrap'
+      });
+
+      gsap.set(splitText.words, { 
+        opacity: 0,
+        y: 50,
+        rotateX: -210
+      });
+
+      const tlSplit = gsap.timeline({
+        defaults: {
+          duration: 0.7,
+          ease: "back.out(1.7)",
+        }
+      });
+
+      tlSplit.to(splitText.words, {
+        opacity: 1,
+        y: 10,
+        rotateX: 0,
+        stagger: 0.2,
+      });
+
+      return () => {
+        if (splitText) splitText.revert();
+      };
+    }
   }, []);
 
   const scrollToServices = () => {
@@ -62,9 +93,9 @@ const HeroSection = () => {
         <div className="max-w-3xl">
           <h1 
             ref={headingRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-print-gold mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-print-gold mb-4 [perspective:1000px]"
           >
-            <span className='text-orange-500'>High-Quality </span>Digital Printing for Every Need
+            <span className='text-orange-500'>High-Quality </span> Digital Printing for Every Need
           </h1>
           <p 
             ref={taglineRef}
@@ -75,13 +106,13 @@ const HeroSection = () => {
           <div ref={ctaRef} className="flex flex-wrap gap-4">
             <button 
               onClick={scrollToServices}
-              className="button-primary"
+              className="button-primary hover:scale-105 transition-transform"
             >
               Get a Quote <ArrowRight className="h-5 w-5" />
             </button>
             <button 
               onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-              className="button-secondary"
+              className="button-secondary hover:scale-105 transition-transform"
             >
               View Our Work
             </button>
@@ -90,12 +121,12 @@ const HeroSection = () => {
       </div>
       
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div 
-          className="w-8 h-8 border-2 border-print-gold rounded-full flex items-center justify-center cursor-pointer"
+        <button 
+          className="w-8 h-8 border-2 border-print-gold rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
           onClick={scrollToServices}
         >
           <ArrowRight className="h-4 w-4 text-print-gold rotate-90" />
-        </div>
+        </button>
       </div>
     </section>
   );

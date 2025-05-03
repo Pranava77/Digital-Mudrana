@@ -1,11 +1,13 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import SparkButton from './SparkButton';
+import gsap from 'gsap';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const digitalRef = useRef<HTMLSpanElement>(null);
+  const mudranaRef = useRef<HTMLSpanElement>(null);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +36,37 @@ const Navbar = () => {
     };
   }, [scrolled]);
   
+  useEffect(() => {
+    // Typing animation for the logo text
+    const digitalText = "Digital";
+    const mudranaText = "Mudrana";
+    
+    if (digitalRef.current && mudranaRef.current) {
+      digitalRef.current.textContent = "";
+      mudranaRef.current.textContent = "";
+      
+      const tl = gsap.timeline();
+      
+      // Animate "Digital"
+      tl.to(digitalRef.current, {
+        duration: 1.2,
+        onUpdate: function() {
+          const progress = Math.floor(this.progress() * digitalText.length);
+          digitalRef.current!.textContent = digitalText.slice(0, progress);
+        }
+      });
+      
+      // Animate "Mudrana"
+      tl.to(mudranaRef.current, {
+        duration: 1.7,
+        onUpdate: function() {
+          const progress = Math.floor(this.progress() * mudranaText.length);
+          mudranaRef.current!.textContent = mudranaText.slice(0, progress);
+        }
+      }, "-=1");
+    }
+  }, []);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -50,7 +83,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img alt="Digital Mudrana Logo" src="/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png" className="h-20 object-cover" />
-            <span className="text-print-gold font-bold text-2xl">Digital <span className="text-print-orange">Mudrana</span></span>
+            <span className="text-print-gold font-bold text-2xl">
+              <span ref={digitalRef}>Digital</span>{" "}
+              <span ref={mudranaRef} className="text-print-orange">Mudrana</span>
+            </span>
           </div>
           
           <nav className="hidden md:flex items-center space-x-1">
