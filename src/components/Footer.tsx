@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img alt="Digital Mudrana Logo" src="/lovable-uploads/c921d2a3-0a60-4add-9c3d-0fb93802531b.png" className="h-20" />
+              <img alt="Digital Mudrana Logo" src="/digital_print.png" className="h-20" />
               <span className="text-print-gold font-bold text-2xl">Digital <span className="text-print-orange">Mudrana</span></span>
             </div>
             <p className="text-print-text/70 mb-6 max-w-md">

@@ -134,6 +134,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <form
+       
             ref={formRef}
             onSubmit={handleSubmit}
             className="space-y-6 bg-print-lightBackground/20 backdrop-blur-sm p-8 rounded-lg shadow-xl border border-print-gold/20"
