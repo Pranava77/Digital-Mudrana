@@ -105,29 +105,33 @@ const ClientLogosMarquee = () => {
       
       <div ref={marqueeRef} className="marquee-container w-full overflow-hidden relative h-[200px] md:h-[200px]">
         <div className="flex absolute" style={{minWidth: '100%'}}>
-          <div ref={firstMarqueeRef} className="flex items-center space-x-16 md:space-x-24 py-4 mx-8">
+          <div ref={firstMarqueeRef} className="flex items-center py-4 mx-8">
             {clientLogos.map((client, index) => (
-              <div key={`first-${index}`} className="logo-card group shrink-0">
-                <img 
-                  src={client.logo} 
-                  alt={`${client.name} logo`} 
-                  className="max-h-20 md:max-h-24 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
-                />
-                <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300">
+              <div key={`first-${index}`} className="logo-card group mx-8 md:mx-12 flex flex-col items-center justify-center w-[120px] md:w-[150px] flex-shrink-0">
+                <div className="h-[80px] md:h-[100px] w-full flex items-center justify-center">
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} logo`} 
+                    className="max-h-[70px] md:max-h-[90px] max-w-[100px] md:max-w-[130px] object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
+                  />
+                </div>
+                <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300 w-full">
                   {client.name}
                 </span>
               </div>
             ))}
           </div>
-          <div ref={secondMarqueeRef} className="flex items-center space-x-16 md:space-x-24 py-4 mx-8">
+          <div ref={secondMarqueeRef} className="flex items-center py-4 mx-8">
             {clientLogos.map((client, index) => (
-              <div key={`second-${index}`} className="logo-card group shrink-0">
-                <img 
-                  src={client.logo} 
-                  alt={`${client.name} logo`} 
-                  className="max-h-20 md:max-h-24 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
-                />
-                <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300">
+              <div key={`second-${index}`} className="logo-card group mx-8 md:mx-12 flex flex-col items-center justify-center w-[120px] md:w-[150px] flex-shrink-0">
+                <div className="h-[80px] md:h-[100px] w-full flex items-center justify-center">
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} logo`} 
+                    className="max-h-[70px] md:max-h-[90px] max-w-[100px] md:max-w-[130px] object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
+                  />
+                </div>
+                <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300 w-full">
                   {client.name}
                 </span>
               </div>
