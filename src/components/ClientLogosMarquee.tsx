@@ -108,13 +108,11 @@ const ClientLogosMarquee = () => {
           <div ref={firstMarqueeRef} className="flex items-center space-x-16 md:space-x-24 py-4 mx-8">
             {clientLogos.map((client, index) => (
               <div key={`first-${index}`} className="logo-card group shrink-0">
-                <div className="w-28 h-28 md:w-36 md:h-36 bg-print-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center p-2 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105 border border-print-gold/10">
-                  <img 
-                    src={client.logo} 
-                    alt={`${client.name} logo`} 
-                    className="max-h-16 md:max-h-20 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
-                  />
-                </div>
+                <img 
+                  src={client.logo} 
+                  alt={`${client.name} logo`} 
+                  className="max-h-20 md:max-h-24 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
+                />
                 <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300">
                   {client.name}
                 </span>
@@ -124,13 +122,11 @@ const ClientLogosMarquee = () => {
           <div ref={secondMarqueeRef} className="flex items-center space-x-16 md:space-x-24 py-4 mx-8">
             {clientLogos.map((client, index) => (
               <div key={`second-${index}`} className="logo-card group shrink-0">
-                <div className="w-28 h-28 md:w-36 md:h-36 bg-print-background/30 backdrop-blur-sm rounded-xl flex items-center justify-center p-2 transition-all duration-300 hover:bg-print-gold/20 group-hover:scale-105 border border-print-gold/10">
-                  <img 
-                    src={client.logo} 
-                    alt={`${client.name} logo`} 
-                    className="max-h-16 md:max-h-20 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
-                  />
-                </div>
+                <img 
+                  src={client.logo} 
+                  alt={`${client.name} logo`} 
+                  className="max-h-20 md:max-h-24 max-w-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
+                />
                 <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300">
                   {client.name}
                 </span>
