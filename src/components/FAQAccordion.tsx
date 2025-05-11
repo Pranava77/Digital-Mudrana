@@ -14,7 +14,7 @@ const FAQAccordion = () => {
     },
     {
       question: "How quickly can you deliver printed materials?",
-      answer: "Our turnaround times vary depending on the project complexity and quantity. Standard business cards typically take 2-3 business days, while larger projects may take 5-7 business days. Rush services are available at an additional cost."
+      answer: "Our turnaround times vary depending on the Printing complexity and quantity. Standard business cards typically take 1 business Hour, while larger projects may take 2-3 business days. Rush services are available at an additional cost."
     },
     {
       question: "Do you offer design services?",

@@ -12,7 +12,7 @@ const ClientLogosMarquee = () => {
   // Client logos with their names - using the uploaded images
   const clientLogos = [
     {
-      name: 'Engineers Council',
+      name: 'BMS College of Engineering',
       logo: '/lovable-uploads/d0e71cd0-7ff2-46b5-a164-66ca96481a4b.png'
     },
     {
@@ -124,16 +124,19 @@ const ClientLogosMarquee = () => {
           <div ref={secondMarqueeRef} className="flex items-center py-4 mx-8">
             {clientLogos.map((client, index) => (
               <div key={`second-${index}`} className="logo-card group mx-8 md:mx-12 flex flex-col items-center justify-center w-[120px] md:w-[150px] flex-shrink-0">
+              
+              
                 <div className="h-[80px] md:h-[100px] w-full flex items-center justify-center">
                   <img 
                     src={client.logo} 
-                    alt={`${client.name} logo`} 
+                    alt={`logo`} 
                     className="max-h-[70px] md:max-h-[90px] max-w-[100px] md:max-w-[130px] object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300" 
                   />
                 </div>
                 <span className="block mt-3 text-center text-sm md:text-base text-print-gold group-hover:text-print-orange transition-colors duration-300 w-full">
                   {client.name}
                 </span>
+
               </div>
             ))}
           </div>

@@ -111,6 +111,15 @@ const ContactSection = () => {
     }, 1500);
   };
 
+
+// EmailJs Code
+
+
+
+
+
+
+
   return (
     <section
       id="contact"
@@ -197,14 +206,14 @@ const ContactSection = () => {
                 htmlFor="message"
                 className="text-sm font-medium text-print-text/90"
               >
-                Project Details
+                Printing Details
               </label>
               <Textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell us about your Project Requirments..."
+                placeholder="Tell us about your Printing Requirments..."
                 required
                 className="resize-none
 min-h-80

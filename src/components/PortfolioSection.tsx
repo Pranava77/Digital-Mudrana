@@ -101,7 +101,7 @@ const PortfolioSection = () => {
         <div ref={headingRef} className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-print-gold mb-4">Our Portfolio</h2>
           <p className="text-lg text-print-text/70 max-w-2xl mx-auto">
-            Take a look at some of our recent projects showcasing the quality and versatility of our printing services.
+            Take a look at some of our recent Prints showcasing the quality and versatility of our printing services.
           </p>
         </div>
         
@@ -152,7 +152,7 @@ const PortfolioSection = () => {
                   className="button-primary mt-4 justify-center"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Request Similar Project
+                  Request Similar Prints
                 </button>
               </div>
               <button 
