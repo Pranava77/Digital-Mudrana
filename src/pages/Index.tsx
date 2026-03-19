@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import PortfolioSection from '@/components/PortfolioSection';
-import TestimonialCarousel from '@/components/TestimonialCarousel';
 import ClientLogosMarquee from '@/components/ClientLogosMarquee';
 import FAQAccordion from '@/components/FAQAccordion';
 import ContactSection from '@/components/ContactSection';
@@ -64,8 +63,7 @@ const Index = () => {
       <PortfolioSection />
       <ImageCarousel />
       <ClientLogosMarquee />
-      <TestimonialCarousel />
-      <div id="faq">
+<div id="faq">
         <FAQAccordion />
       </div>
       <ContactSection />

@@ -17,7 +17,7 @@ const Navbar = () => {
       }
 
       // Determine active section for nav highlighting
-      const sections = ['hero', 'services', 'portfolio', 'testimonials', 'faq', 'contact'];
+      const sections = ['hero', 'services', 'portfolio', 'faq', 'contact'];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -90,7 +90,7 @@ const Navbar = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-1">
-            {['hero', 'services', 'portfolio', 'testimonials', 'faq', 'contact'].map(section => (
+            {['hero', 'services', 'portfolio', 'faq', 'contact'].map(section => (
               <button 
                 key={section} 
                 onClick={() => scrollToSection(section)} 
@@ -102,11 +102,11 @@ const Navbar = () => {
                 {section === "hero" ? "Home" : section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
-            <SparkButton 
-              className="ml-4 bg-print-gold hover:bg-print-gold/90 text-print-purple" 
+            <SparkButton
+              className="ml-4 bg-print-gold hover:bg-print-gold/90 text-print-purple"
               onClick={() => scrollToSection('contact')}
             >
-              Get a Quote
+              Contact Us
             </SparkButton>
           </nav>
           

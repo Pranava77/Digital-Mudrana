@@ -22,27 +22,22 @@ const ImageCarousel = () => {
   
   const printingCenterImages = [
     {
-      src: 'offset.jpeg',
+      src: '/illustration1.png',
       alt: 'Digital printing press in operation',
       title: 'High-Volume Production'
     },
     {
-      src: '/konica.jpg',
+      src: '/illustration2.png',
       alt: 'Design station with large format printer',
       title: 'Design & Large Format'
     },
     {
-      src: '/cutter.jpeg',
+      src: '/illustration3.png',
       alt: 'Finishing and binding equipment',
       title: 'Finishing Department'
     },
-    // {
-    //   src: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
-    //   alt: 'Staff consulting with customers', 
-    //   title: 'Customer Consultation'
-    // },
     {
-      src: 'paper.jpg',
+      src: '/illustration4.png',
       alt: 'Material sample display',
       title: 'Material Showcase'
     }
