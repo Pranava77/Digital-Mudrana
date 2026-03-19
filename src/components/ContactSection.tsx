@@ -325,11 +325,19 @@ min-h-80
                   </div>
                 </div>
               </div>
+
+              <div className="mt-6 rounded-lg overflow-hidden border border-print-gold/20">
+                <img
+                  src="/geo.jpeg"
+                  alt="Location map"
+                  className="w-full h-48 object-cover"
+                />
+              </div>
             </div>
 
             <div className="bg-print-gold/10 p-6 rounded-lg backdrop-blur-sm border border-print-gold/30 shadow-lg">
               <h3 className="text-xl font-semibold mb-3 text-print-gold">
-                Studio Hours
+                Press Hours
               </h3>
               <div className="space-y-3 text-print-text/90">
                 <div className="flex justify-between border-b border-print-gold/20 pb-2">
