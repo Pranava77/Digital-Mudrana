@@ -12,6 +12,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import ImageCarousel from '@/components/ImageCarousel';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +70,7 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <Toaster />
+      <WhatsAppButton />
     </div>
   );
 };
