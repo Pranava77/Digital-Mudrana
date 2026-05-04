@@ -89,7 +89,7 @@ const ImageCarousel = () => {
                           alt={image.alt}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           onError={(e) => {
-                            e.currentTarget.src = '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png';
+                            e.currentTarget.src = '/client_logos/placeholder_fallback.png';
                             e.currentTarget.classList.add('error-image');
                           }}
                         />
@@ -121,7 +121,7 @@ const ImageCarousel = () => {
                 alt={printingCenterImages[openImageIndex].alt}
                 className="w-full object-contain max-h-[80vh]"
                 onError={(e) => {
-                  e.currentTarget.src = '/lovable-uploads/7265d075-b961-42c2-80dc-b6a5bd7b5627.png';
+                  e.currentTarget.src = '/client_logos/placeholder_fallback.png';
                   e.currentTarget.classList.add('error-image');
                 }}
               />
