@@ -37,11 +37,6 @@ const ImageCarousel = () => {
       title: 'Creative Production Hub'
     },
     {
-      src: '/digital_images/digital_4.png',
-      alt: 'Precision cutting and finishing tools',
-      title: 'Expert Finishing Services'
-    },
-    {
       src: '/digital_images/digital_5.png',
       alt: 'State-of-the-art machinery for quality output',
       title: 'Advanced Print Machinery'
