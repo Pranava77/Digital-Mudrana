@@ -92,9 +92,9 @@ const ContactSection = () => {
             ref={mapRef}
             className="rounded-lg overflow-hidden shadow-xl border border-print-gold/20 min-h-[500px]"
           >
-            <iframe
+              <iframe
               title="Digital Mudrana Location"
-              src="https://maps.google.com/maps?q=%2323+1st+cross+Cauvery+Nagara+Kathriguppe+BSK+3rd+Stage+Bengaluru+560085&output=embed"
+              src="https://maps.google.com/maps?q=23,+1+St+cross,+Kaveri+Nagar+Kathriguppe+main+road,+85,+Banashankari+3rd+Stage,+Bengaluru,+Karnataka+560085&output=embed"
               width="100%"
               height="100%"
               style={{ minHeight: "500px", border: 0 }}
@@ -153,11 +153,11 @@ const ContactSection = () => {
                       Address
                     </h4>
                     <p className="text-print-text/90">
-                      #23 1st cross Cauvery Nagara,
+                      23, 1 St cross, Kaveri Nagar Kathriguppe main road,
                       <br />
-                      Kathriguppe BSK 3rd Stage
+                      85, Banashankari 3rd Stage,
                       <br />
-                      Bengaluru 560085.
+                      Bengaluru, Karnataka 560085
                     </p>
                   </div>
                 </div>

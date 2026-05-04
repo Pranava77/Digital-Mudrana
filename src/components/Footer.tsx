@@ -1,5 +1,5 @@
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, MapPin } from 'lucide-react';
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -18,6 +18,16 @@ const Footer = () => {
             <p className="text-print-text/70 mb-6 max-w-md">
               Premium printing services for all your business and personal needs in Bangalore and across Karnataka. Quality results delivered with precision and care.
             </p>
+            <div className="flex flex-col space-y-3 mb-6">
+              <div className="flex items-start gap-3 text-print-text/70">
+                 <Mail className="w-5 h-5 text-print-gold shrink-0 mt-0.5" />
+                 <span>digitalmudrana@gmail.com</span>
+              </div>
+              <div className="flex items-start gap-3 text-print-text/70">
+                 <MapPin className="w-5 h-5 text-print-gold shrink-0 mt-0.5" />
+                 <span>23, 1 St cross, Kaveri Nagar Kathriguppe main road, 85, Banashankari 3rd Stage, Bengaluru, Karnataka 560085</span>
+              </div>
+            </div>
             <button onClick={() => document.getElementById('contact')?.scrollIntoView({
             behavior: 'smooth'
           })} className="inline-flex items-center text-print-gold hover:text-print-orange transition-colors">
