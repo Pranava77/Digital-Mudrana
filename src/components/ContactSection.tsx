@@ -139,9 +139,9 @@ const ContactSection = () => {
                     <h4 className="font-medium text-print-gold text-lg">
                       Email
                     </h4>
-                    <p className="text-print-text/90">
+                    <a href="mailto:digitalmudrana@gmail.com" className="text-print-text/90 hover:text-print-gold transition-colors inline-block mt-0.5">
                       digitalmudrana@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start">
