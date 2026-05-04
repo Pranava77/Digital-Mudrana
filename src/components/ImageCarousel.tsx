@@ -22,24 +22,34 @@ const ImageCarousel = () => {
   
   const printingCenterImages = [
     {
-      src: '/illustration1.png',
-      alt: 'Digital printing press in operation',
-      title: 'High-Volume Production'
+      src: '/digital_images/digital_1.png',
+      alt: 'Advanced digital printing technology in action',
+      title: 'High-Precision Digital Printing'
     },
     {
-      src: '/illustration2.png',
-      alt: 'Design station with large format printer',
-      title: 'Design & Large Format'
+      src: '/digital_images/digital_2.png',
+      alt: 'Professional large format printing equipment',
+      title: 'Large Format Excellence'
     },
     {
-      src: '/illustration3.png',
-      alt: 'Finishing and binding equipment',
-      title: 'Finishing Department'
+      src: '/digital_images/digital_3.png',
+      alt: 'Modern workspace for design and production',
+      title: 'Creative Production Hub'
     },
     {
-      src: '/illustration4.png',
-      alt: 'Material sample display',
-      title: 'Material Showcase'
+      src: '/digital_images/digital_4.png',
+      alt: 'Precision cutting and finishing tools',
+      title: 'Expert Finishing Services'
+    },
+    {
+      src: '/digital_images/digital_5.png',
+      alt: 'State-of-the-art machinery for quality output',
+      title: 'Advanced Print Machinery'
+    },
+    {
+      src: '/digital_images/digital_6.png',
+      alt: 'Our organized and efficient printing facility',
+      title: 'Modern Facility Tour'
     }
   ];
 
